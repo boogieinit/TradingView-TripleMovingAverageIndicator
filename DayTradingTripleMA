@@ -1,0 +1,27 @@
+//@version=1
+//@Author: Tumbolia
+
+//Allows three moving averages without using up 3 charting indicators
+
+study(title="Day Trading Triple Moving Averages", shorttitle="DTTMA", overlay=true)
+
+// Checkbox's for 2nd and 3rd MA's
+a = input(true, title="Enable 2nd MA")
+b = input(true, title="Enable 3rd MA")
+
+// Values
+len = input(9, minval=1, title="Length")
+len2 = input(20, minval=1, title="Length2")
+len3 = input(200, minval=1, title="Length3")
+
+src = input(close, title="Source")
+src2 = input(close, title="Source2")
+src3 = input(close, title="Source3")
+
+out = ema(src, len)
+out2 = ema(src2, len2)
+out3 = sma(src3, len3)
+
+plot(out, title="9EMA", color=blue)
+plot(a and out2 ? out2: na, title="20EMA", color=green)
+plot(b and out3 ? out3: na, title="200SMA", color=yellow)

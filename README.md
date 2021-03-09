@@ -1,4 +1,4 @@
-# DayTradingTripleMA
+# TradingView - Triple Moving Average Indicator
 This is an indicator for Trading View charts.
 It uses three moving averages to avoid using up individual indicators (usefule if you have a free account).
 
